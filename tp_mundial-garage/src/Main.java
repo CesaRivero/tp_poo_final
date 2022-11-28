@@ -1,3 +1,7 @@
+import garage.Auto;
+import garage.Garage;
+import garage.Moto;
+
 public class Main {
     public static void main(String[] args) {
         Garage garage1=new Garage(2,100);

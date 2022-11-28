@@ -1,8 +1,12 @@
-public class Auto extends Vehiculo{
+package garage;
+
+import garage.Vehiculo;
+
+public class Auto extends Vehiculo {
 
     private int cantidadPuertas;
 
-    Auto(String marca, String modelo,double kilometraje,int cantidadRueda,int cantidadPuertas){
+    public Auto(String marca, String modelo, double kilometraje, int cantidadRueda, int cantidadPuertas){
         this.setCantidadRueda(cantidadRueda);
         this.setMarca(marca);
         this.setModelo(modelo);

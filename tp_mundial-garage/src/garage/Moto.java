@@ -1,7 +1,11 @@
-public class Moto extends Vehiculo{
+package garage;
+
+import garage.Vehiculo;
+
+public class Moto extends Vehiculo {
     private int cilindrada;
 
-    Moto(String marca, String modelo,int cantidadRueda,int cilindrada,double kilometraje){
+    public Moto(String marca, String modelo, int cantidadRueda, int cilindrada, double kilometraje){
         this.setCantidadRueda(cantidadRueda);
         this.setMarca(marca);
         this.setModelo(modelo);

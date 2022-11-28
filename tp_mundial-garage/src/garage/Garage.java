@@ -1,3 +1,7 @@
+package garage;
+
+import garage.Vehiculo;
+
 import java.util.ArrayList;
 
 public class Garage {
@@ -21,7 +25,7 @@ public class Garage {
         this.vehiculos.remove(vehiculo);
     }
 
-    Garage(int capacidadMaxima,double precioCambioRueda){
+    public Garage(int capacidadMaxima, double precioCambioRueda){
         this.setCapacidadMaxima(capacidadMaxima);
         this.setPrecioCambioRueda(precioCambioRueda);
         this.vehiculos =new ArrayList<Vehiculo>();
