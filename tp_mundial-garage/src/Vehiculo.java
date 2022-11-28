@@ -9,7 +9,7 @@ public class Vehiculo {
     }
 
     public void setCantidadRueda(int cantidadRueda) {
-        cantidadRueda = cantidadRueda;
+        this.cantidadRueda = cantidadRueda;
     }
 
     public double getKilometreaje() {

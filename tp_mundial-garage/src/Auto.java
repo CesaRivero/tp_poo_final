@@ -2,7 +2,7 @@ public class Auto extends Vehiculo{
 
     private int cantidadPuertas;
 
-    Auto(String marca, String modelo,int kilometraje,int cantidadRueda,int cantidadPuertas){
+    Auto(String marca, String modelo,double kilometraje,int cantidadRueda,int cantidadPuertas){
         this.setCantidadRueda(cantidadRueda);
         this.setMarca(marca);
         this.setModelo(modelo);

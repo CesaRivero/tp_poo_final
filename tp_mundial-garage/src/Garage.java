@@ -1,41 +1,54 @@
 import java.util.ArrayList;
 
 public class Garage {
-    private double precioTotal;
     private boolean estaLleno;
     private double precioCambioRueda;
     private int capacidadMaxima;
-    private Vehiculo trasporte;
-    private ArrayList<Vehiculo>vehiculo;
+    private ArrayList<Vehiculo> vehiculos;
     private double kilometrajeMedio;
 
 
 
     public boolean estaLleno() {
 
-        return this.vehiculo.size()>=capacidadMaxima;
+        return this.vehiculos.size()>=capacidadMaxima;
     }
     public void agregarVehiculo(Vehiculo vehiculo){
-        if (estaLleno) ;/*falta limitar que no agregue si pasa l acapacidad maxima*/
-        else
-        this.vehiculo.add(vehiculo);
+        if (estaLleno()) return ;/*resuelto*/
+        this.vehiculos.add(vehiculo);
     }
     public void retirarVehiculo (Vehiculo vehiculo){
-        this.vehiculo.remove(vehiculo);
+        this.vehiculos.remove(vehiculo);
     }
 
     Garage(int capacidadMaxima,double precioCambioRueda){
         this.setCapacidadMaxima(capacidadMaxima);
         this.setPrecioCambioRueda(precioCambioRueda);
-        this.vehiculo=new ArrayList<Vehiculo>();
+        this.vehiculos =new ArrayList<Vehiculo>();
        /*this.kilometrajeMedio=this.trasporte.getKilometreaje()/this.getVehiculo().size(); intento de guardar los kilometrajes para sacar la media*/
 
     }
-  /*  public void cambioRueda(){ intento de sumar las ruedas en variables locales
-        int ruedaTotal=this.trasporte.getCantidadRueda();
+    public double calculoKilometrajeMedio(){
+        double kilometrajeMedio=0;
+        //vehiculos.length
+        for (int i = 0; i <this.getVehiculos().size() ; i++) {
+            //vehiculos[i] -> vehiculos.get(i)
+           kilometrajeMedio=kilometrajeMedio+this.getVehiculos().get(i).getKilometreaje();
 
-       precioTotal=ruedaTotal*precioCambioRueda;
-    }*/
+
+        }
+        return kilometrajeMedio/this.getVehiculos().size();
+    }
+
+  public double valorTotalCambioRueda(){ //intento de sumar las ruedas en variables locales
+        int ruedaTotal=0;
+      for (int i = 0; i <this.getVehiculos().size() ; i++) {
+          ruedaTotal=ruedaTotal+this.getVehiculos().get(i).getCantidadRueda();
+
+      }
+
+      return ruedaTotal*precioCambioRueda;
+    }
 
 
     public int getCapacidadMaxima() {
@@ -46,12 +59,12 @@ public class Garage {
         this.capacidadMaxima = capacidadMaxima;
     }
 
-    public ArrayList<Vehiculo> getVehiculo() {
-        return vehiculo;
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
     }
 
-    public void setVehiculo(ArrayList<Vehiculo> vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
     }
 
     public double getPrecioCambioRueda() {
@@ -68,14 +81,6 @@ public class Garage {
         this.estaLleno = estaLleno;
     }
 
-
-    public double getPrecioTotal() {
-        return precioTotal;
-    }
-
-    public void setPrecioTotal(double precioTotal) {
-        this.precioTotal = precioTotal;
-    }
 
     public double getKilometrajeMedio() {
         return kilometrajeMedio;
